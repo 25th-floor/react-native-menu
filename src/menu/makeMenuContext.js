@@ -126,7 +126,7 @@ module.exports = (React, ReactNative, { constants, model, styles }) => {
     },
     _registerMenu(name, hooks) {
       if (this._menus[name]) {
-        console.warn(`Menu ${name} has already been registered in this context. Please provide a different name.`);
+        //console.warn(`Menu ${name} has already been registered in this context. Please provide a different name.`);
       }
       this._menus[name] = hooks;
     },
