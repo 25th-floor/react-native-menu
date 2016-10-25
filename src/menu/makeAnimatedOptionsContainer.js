@@ -6,11 +6,11 @@ module.exports = (React, ReactNative) => {
   const AnimatedOptionsContainer = React.createClass({
     mixins: [TimerMixin],
     getInitialState() {
-      return { scaleAnim: new Animated.Value(0.001) };
+      return { fadeAnim: new Animated.Value(0) };
     },
     componentDidMount() {
       this.setTimeout(() => {
-        Animated.timing(this.state.scaleAnim, {
+        Animated.timing(this.state.fadeAnim, {
           duration: 60,
           toValue: 1
         }).start();
@@ -18,7 +18,7 @@ module.exports = (React, ReactNative) => {
     },
     render() {
       return (
-        <Animated.View style={[this.props.style, { transform: [ { scale: this.state.scaleAnim } ] }]}>
+        <Animated.View style={[this.props.style, {opacity: this.state.fadeAnim}]}>
           { this.props.children }
         </Animated.View>
       );
